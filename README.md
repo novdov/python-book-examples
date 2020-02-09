@@ -14,5 +14,5 @@ python 3.8.1
 $ pyenv install 3.8-dev
 
 # Create virtualenv using venv.
-$ python3 -m venv PATH_TO_CREATE_VENV
+$ python3 -m venv VENV_NAME
 ```
