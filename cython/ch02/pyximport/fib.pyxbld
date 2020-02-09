@@ -1,0 +1,7 @@
+def make_ext(modnamne, pyxfilename):
+    from setuptools import Extension
+    return Extension(
+        modnamne,
+        sources=[pyxfilename, "_fib.c"],
+        include_dirs=["."],
+    )
