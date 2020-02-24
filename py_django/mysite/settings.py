@@ -18,7 +18,7 @@ from django.core.exceptions import ImproperlyConfigured
 def _get_secret_key(json_file: str, key: str = "SECRET_KEY") -> str:
     try:
         with open(json_file, "r") as f_in:
-            secret_key = json.load(f_in.read())[key]
+            secret_key = json.load(f_in)[key]
         return secret_key
     except KeyError as e:
         raise ImproperlyConfigured(f"Set {key} variable properly") from e
@@ -124,7 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = "/static/"
-STATIC_DIRS = os.path.join(BASE_DIR, STATIC_URL[1:-1])
+STATICFILES_DIRS = [os.path.join(BASE_DIR, STATIC_URL[1:-1])]
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, MEDIA_URL[1:-1])
