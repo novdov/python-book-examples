@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Blog List</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}post_all.html{% endblock %}
+
+{% block content %}
+
 <h1>Blog List</h1>
 <br>
 {% for post in posts %}
@@ -16,15 +15,15 @@
 <div>
     <span>
         {% if page_obj.has_previous %}
-            <a href="?page={{ page_obj.previous_page_number }}">PreviousPage</a>
+            <a href="?page={{ page_obj.previous_page_number }}">Previous Page</a>
         {% endif %}
 
         Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
 
         {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}">NextPage</a>
+            <a href="?page={{ page_obj.next_page_number }}">Next Page</a>
         {% endif %}
     </span>
 </div>
-</body>
-</html>
+
+{% endblock %}

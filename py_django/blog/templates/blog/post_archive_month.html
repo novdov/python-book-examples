@@ -1,21 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Post Archive Month</title>
-</head>
-<body>
-<h1>Post Archives for {{ month|date:"N, Y" }}</h1>
+{% extends "base.html" %}
 
+{% block title %}post_archive_year.html{% endblock %}
+
+{% block content %}
+
+<h1>Post Archives for {{ month|date:"N, Y" }}</h1>
+<br><br>
 <div>
     <ul>
         {% for post in object_list %}
-        <li>
+        <li class="h5">
             {{ post.modify_dt|date:"Y-m-d" }}&nbsp;&nbsp;&nbsp;
             <a href="{{ post.get_absolute_url }}"><strong>{{ post.title }}</strong>s</a>
         </li>
         {% endfor %}
     </ul>
 </div>
-</body>
-</html>
+
+{% endblock %}
+s
