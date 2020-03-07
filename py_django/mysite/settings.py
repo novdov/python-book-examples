@@ -133,3 +133,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, MEDIA_URL[1:-1])
 
 TAGGIT_CASE_INSENSITIVE = True
 TAGGIT_LIMIT = 50
+
+DISQUS_SHORTNAME = "pydjango-web-programming-bhuletuwlu"
+DISQUS_MY_DOMAIN = "http://127.0.0.1:8000"
