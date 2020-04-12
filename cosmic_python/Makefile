@@ -1,2 +1,2 @@
 test:
-	pytest -v -s ./
+	pytest -vv -s ./
